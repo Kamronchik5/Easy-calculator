@@ -1,7 +1,7 @@
 ﻿Console.WriteLine("Hi user !");
 Console.WriteLine("Choose menu :");
 Console.WriteLine("1. +, -, *, /, ^ does solve");
-Console.WriteLine("2. log a (b)");
+Console.WriteLine("2. log a(b)");
 
 string input = Console.ReadLine();
 switch(input)
@@ -46,4 +46,18 @@ switch(input)
             Console.WriteLine($"{ifoda} = {natija}");
         }
         break;
+        case "2" :
+        {
+            Console.Write("Ifodani kiriting : [log25(25)]");
+            string ifoda = Console.ReadLine();
+            int index1 = ifoda.IndexOf("(");
+            int index2 = ifoda.IndexOf(")");
+            string strNum1 = ifoda.Substring(3, index1 -3);
+            string strNum2 = ifoda.Substring(index1 + 1, index2 - index1 -1);
+            double Num1 = Convert.ToDouble(strNum1);
+            double Num2 = Convert.ToDouble(strNum2);
+            double natija = Math.Log(Num2) / Math.Log(Num1);
+            Console.WriteLine($"{ifoda} = {natija}");
+        }
+        break; 
 }
